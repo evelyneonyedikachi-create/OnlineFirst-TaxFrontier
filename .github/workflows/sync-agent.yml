@@ -19,7 +19,7 @@ jobs:
       - name: Clone AI Studio source repository
         run: |
           git clone \
-            https://github.com/onlinefirst2026-beep/OnlineFirst-TF-Jor-TFAI.git \
+            https://github.com/evelyneonyedikachi-create/OnlineFirst-TF-Jor-TFAI.git \
             /tmp/agent-source
 
       - name: Sync source files
