@@ -9,6 +9,10 @@ import { Demo1Institutional } from './components/demos/Demo1Institutional';
 import { Demo2PolicyPlatform } from './components/demos/Demo2PolicyPlatform';
 import { Demo3AfricanDiscovery } from './components/demos/Demo3AfricanDiscovery';
 import { AdminCMS } from './components/admin/AdminCMS';
+import { ProposalAccessClosed } from './components/ProposalAccessClosed';
+
+const PROPOSAL_ACCESS_ENABLED =
+  import.meta.env.VITE_PROPOSAL_ACCESS_ENABLED === 'true';
 
 const MainViewRouter: React.FC = () => {
   const { currentView, notification } = useJournalConfig();
@@ -39,6 +43,10 @@ const MainViewRouter: React.FC = () => {
 };
 
 export default function App() {
+  if (!PROPOSAL_ACCESS_ENABLED) {
+    return <ProposalAccessClosed />;
+  }
+
   return (
     <JournalConfigProvider>
       <MainViewRouter />
